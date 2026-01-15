@@ -1,0 +1,59 @@
+Python 3.9+
+---------------------------------------------------------------------
+Python Libraries
+Flask
+Twilio
+APScheduler
+SQLite (built-in)
+---------------------------------------------------------------------
+pip install flask twilio apscheduler
+---------------------------------------------------------------------
+Run Flask
+python app.py
+---------------------------------------------------------------------
+Expose Server
+ngrok http 5000
+
+--------------------------------------------------------------------
+HOW TO RUN THE BOT (TESTING)
+Step 1: Create Twilio Account
+
+👉 https://www.twilio.com/whatsapp
+
+Step 2: Get:
+
+Account SID
+
+Auth Token
+
+WhatsApp Sandbox Number
+---------------------------------------------------------------------
+
+Create Database (SQLite)
+Open Python shell and run once:
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+c = conn.cursor()
+
+c.execute("""
+CREATE TABLE IF NOT EXISTS medications (
+    phone TEXT,
+    medicine TEXT,
+    time TEXT,
+    status TEXT,
+    date TEXT
+)
+""")
+
+conn.commit()
+conn.close()
+---------------------------------------------------------------------
+Start Flask
+
+py app.py
+
+---------------------------------------------------------------------
+estart ngrok
+
+ngrok http 5000
